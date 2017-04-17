@@ -36,5 +36,11 @@ namespace O365UrlShortener
 		void onPasteboardStringChanged(string str)
 		{
 		}
+
+		partial void OnTestClicked(NSObject sender)
+		{
+			string s = this.googleApiKey.StringValue;
+			HttpAccessor.Get<string>("https://www.googleapis.com/urlshortener/v1/url?key=" + s);
+		}
 	}
 }

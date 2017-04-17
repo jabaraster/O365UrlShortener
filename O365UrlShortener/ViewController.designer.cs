@@ -23,12 +23,15 @@ namespace O365UrlShortener
 
 		[Action ("OnMonitoringCheckChanged:")]
 		partial void OnMonitoringCheckChanged (Foundation.NSObject sender);
+
+		[Action ("OnTestClicked:")]
+		partial void OnTestClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (progressContainer != null) {
-				progressContainer.Dispose ();
-				progressContainer = null;
+			if (googleApiKey != null) {
+				googleApiKey.Dispose ();
+				googleApiKey = null;
 			}
 
 			if (pasteboardMonitoring != null) {
@@ -36,9 +39,9 @@ namespace O365UrlShortener
 				pasteboardMonitoring = null;
 			}
 
-			if (googleApiKey != null) {
-				googleApiKey.Dispose ();
-				googleApiKey = null;
+			if (progressContainer != null) {
+				progressContainer.Dispose ();
+				progressContainer = null;
 			}
 		}
 	}
