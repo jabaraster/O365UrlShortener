@@ -34,17 +34,17 @@ namespace O365UrlShortener.Model
 
 		/**
          * OneNoteでページのリンク先のURLをコピーすると２行の文字列がペーストボードに送られる.
-         * これをそのままGoogle Shortener APIに送るとパースエラートなる（当然）ので、１行のみ抽出する.
+         * これをそのままGoogle Shortener APIに送るとパースエラーとなる（当然）ので、１行のみ抽出する.
          * ２行目はonenote:で始まるカスタムプロトコルであり、これまたGoogle Shortener APIに送るとエラーになる.
          * よって１行目のhttpsで始まるURLを抽出する.
 		 */
 		static string extractUrl(string source)
 		{
-			foreach (var line in source.Split(new char[] { '\n' }))
+			foreach (var line in source.Split(new char[] { '\n', '\r' }))
 			{
 				if (line.StartsWith("http")) return line;
 			}
-			throw new ApplicationException("短縮対象のURLが不正(HTTPで始まる行がない) ---> " + source);
+			throw new ApplicationException("短縮対象のURLが不正(httpで始まる行がない) ---> " + source);
 		}
 	}
 

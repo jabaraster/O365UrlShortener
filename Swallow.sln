@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "O365UrlShortener", "O365UrlShortener\O365UrlShortener.csproj", "{A8407B8A-E936-4BFC-B152-B20B56EB3638}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swallow", "Swallow\Swallow.csproj", "{A8407B8A-E936-4BFC-B152-B20B56EB3638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
