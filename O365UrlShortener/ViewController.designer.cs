@@ -13,32 +13,24 @@ namespace O365UrlShortener
 	partial class ViewController
 	{
 		[Outlet]
-		AppKit.NSTextField googleApiKey { get; set; }
+		AppKit.NSSecureTextField googleApiKey { get; set; }
 
 		[Outlet]
 		AppKit.NSButton pasteboardMonitoring { get; set; }
-
-		[Outlet]
-		AppKit.NSStackView progressContainer { get; set; }
 
 		[Action ("OnMonitoringCheckChanged:")]
 		partial void OnMonitoringCheckChanged (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (progressContainer != null) {
-				progressContainer.Dispose ();
-				progressContainer = null;
+			if (googleApiKey != null) {
+				googleApiKey.Dispose ();
+				googleApiKey = null;
 			}
 
 			if (pasteboardMonitoring != null) {
 				pasteboardMonitoring.Dispose ();
 				pasteboardMonitoring = null;
-			}
-
-			if (googleApiKey != null) {
-				googleApiKey.Dispose ();
-				googleApiKey = null;
 			}
 		}
 	}

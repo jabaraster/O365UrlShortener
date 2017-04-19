@@ -23,13 +23,13 @@ namespace O365UrlShortener.Model
 			this.timer = createTimer();
 		}
 
-		public void pause()
+		public void Pause()
 		{
 			this.timer.Invalidate();
 			this.timer = null;
 		}
 
-		public void restart()
+		public void Restart()
 		{
 			this.timer = createTimer();
 		}
