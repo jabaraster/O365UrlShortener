@@ -30,7 +30,7 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
@@ -43,6 +43,8 @@
     <UseRefCounting>true</UseRefCounting>
     <LinkMode>SdkOnly</LinkMode>
     <PlatformTarget>x86</PlatformTarget>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
