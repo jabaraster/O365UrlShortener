@@ -11,7 +11,7 @@ namespace Swallow
 		PasteboardStringMonitor monitor;
 		bool webApiProcessing = false;
 
-		public ViewController(IntPtr handle) : base(handle)
+    public ViewController(IntPtr handle) : base(handle)
 		{
 		}
 
@@ -70,7 +70,6 @@ namespace Swallow
 					return;
 				}
 				notifyToUser("ペーストボードに短縮URLを送りました.", res.longUrl + " >>> " + res.id);
-
 			}
 			catch (Exception ex)
 			{

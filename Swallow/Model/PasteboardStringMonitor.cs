@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using AppKit;
 using Foundation;
 
@@ -12,7 +12,6 @@ namespace Swallow.Model
 		NSTimer timer;
 		string preString = "";
 		nint preChangeCount = -1;
-
 		public PasteboardStringMonitor(NSPasteboard pPasteboard, Action<string> pHandler)
 		{
 			this.pasteboard = pPasteboard;

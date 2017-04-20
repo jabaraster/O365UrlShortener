@@ -1,6 +1,5 @@
-﻿using AppKit;
+using AppKit;
 using Foundation;
-
 namespace Swallow
 {
 	[Register("AppDelegate")]
