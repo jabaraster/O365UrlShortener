@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using AppKit;
 using Foundation;
 
-namespace O365UrlShortener.Model
+namespace Swallow.Model
 {
 	public class PasteboardStringMonitor
 	{
@@ -12,7 +12,6 @@ namespace O365UrlShortener.Model
 		NSTimer timer;
 		string preString = "";
 		nint preChangeCount = -1;
-		
 		public PasteboardStringMonitor(NSPasteboard pPasteboard, Action<string> pHandler)
 		{
 			this.pasteboard = pPasteboard;

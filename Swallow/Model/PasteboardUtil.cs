@@ -1,7 +1,6 @@
-﻿using System;
 using AppKit;
 
-namespace O365UrlShortener.Model
+namespace Swallow.Model
 {
 	public static class PasteboardUtil
 	{
