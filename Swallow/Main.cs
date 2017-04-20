@@ -1,7 +1,6 @@
 ﻿using AppKit;
-using O365UrlShortener.Model;
 
-namespace O365UrlShortener
+namespace Swallow
 {
 	static class MainClass
 	{

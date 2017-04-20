@@ -1,8 +1,7 @@
 ﻿using AppKit;
 using Foundation;
-using O365UrlShortener.Model;
 
-namespace O365UrlShortener
+namespace Swallow
 {
 	[Register("AppDelegate")]
 	public class AppDelegate : NSApplicationDelegate

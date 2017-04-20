@@ -7,9 +7,9 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace O365UrlShortener
+namespace Swallow
 {
-	[Register ("ViewController")]
+	[Register("ViewController")]
 	partial class ViewController
 	{
 		[Outlet]
@@ -18,18 +18,20 @@ namespace O365UrlShortener
 		[Outlet]
 		AppKit.NSButton pasteboardMonitoring { get; set; }
 
-		[Action ("OnMonitoringCheckChanged:")]
-		partial void OnMonitoringCheckChanged (Foundation.NSObject sender);
-		
-		void ReleaseDesignerOutlets ()
+		[Action("OnMonitoringCheckChanged:")]
+		partial void OnMonitoringCheckChanged(Foundation.NSObject sender);
+
+		void ReleaseDesignerOutlets()
 		{
-			if (googleApiKey != null) {
-				googleApiKey.Dispose ();
+			if (googleApiKey != null)
+			{
+				googleApiKey.Dispose();
 				googleApiKey = null;
 			}
 
-			if (pasteboardMonitoring != null) {
-				pasteboardMonitoring.Dispose ();
+			if (pasteboardMonitoring != null)
+			{
+				pasteboardMonitoring.Dispose();
 				pasteboardMonitoring = null;
 			}
 		}

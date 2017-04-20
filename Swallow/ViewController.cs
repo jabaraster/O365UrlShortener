@@ -2,15 +2,15 @@
 using System.Threading.Tasks;
 using AppKit;
 using Foundation;
-using O365UrlShortener.Model;
+using Swallow.Model;
 
-namespace O365UrlShortener
+namespace Swallow
 {
 	public partial class ViewController : NSViewController
 	{
 		PasteboardStringMonitor monitor;
 		bool webApiProcessing = false;
-		
+
 		public ViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -66,10 +66,10 @@ namespace O365UrlShortener
 				var b = PasteboardUtil.SetString(res.id);
 				if (!b)
 				{
-	                notifyToUser("短縮URLをペーストボードに送れませんでした.", "");
+					notifyToUser("短縮URLをペーストボードに送れませんでした.", "");
 					return;
 				}
-                notifyToUser("ペーストボードに短縮URLを送りました.", res.longUrl + " >>> " + res.id);
+				notifyToUser("ペーストボードに短縮URLを送りました.", res.longUrl + " >>> " + res.id);
 
 			}
 			catch (Exception ex)
