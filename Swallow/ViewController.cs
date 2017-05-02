@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using AppKit;
 using Foundation;
+using Security;
 using Swallow.Model;
 
 namespace Swallow
@@ -19,6 +21,7 @@ namespace Swallow
 		{
 			base.ViewDidLoad();
 			this.monitor = new PasteboardStringMonitor(NSPasteboard.GeneralPasteboard, this.onPasteboardStringChanged);
+			this.googleApiKey.StringValue = SecKeyChainUtil.GetGoogleApiKey();
 		}
 
 		public override NSObject RepresentedObject
@@ -43,6 +46,15 @@ namespace Swallow
 			else
 			{
 				this.monitor.Pause();
+			}
+		}
+
+		partial void OnApiKeySaverClicked(NSObject sender)
+		{
+			var res = SecKeyChainUtil.RegisterGoogleApiKey(this.googleApiKey.StringValue);
+			if (res.IsError)
+			{
+				notifyToUser("保存に失敗", res.ErrorMessage);
 			}
 		}
 

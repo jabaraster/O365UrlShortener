@@ -13,15 +13,21 @@ namespace Swallow
 	partial class ViewController
 	{
 		[Outlet]
+		AppKit.NSButton apiKeySaver { get; set; }
+
+		[Outlet]
 		AppKit.NSSecureTextField googleApiKey { get; set; }
 
 		[Outlet]
 		AppKit.NSButton pasteboardMonitoring { get; set; }
 
-		[Action("OnMonitoringCheckChanged:")]
-		partial void OnMonitoringCheckChanged(Foundation.NSObject sender);
+		[Action ("OnApiKeySaverClicked:")]
+		partial void OnApiKeySaverClicked (Foundation.NSObject sender);
 
-		void ReleaseDesignerOutlets()
+		[Action ("OnMonitoringCheckChanged:")]
+		partial void OnMonitoringCheckChanged (Foundation.NSObject sender);
+		
+		void ReleaseDesignerOutlets ()
 		{
 			if (googleApiKey != null)
 			{
@@ -33,6 +39,11 @@ namespace Swallow
 			{
 				pasteboardMonitoring.Dispose();
 				pasteboardMonitoring = null;
+			}
+
+			if (apiKeySaver != null) {
+				apiKeySaver.Dispose ();
+				apiKeySaver = null;
 			}
 		}
 	}
