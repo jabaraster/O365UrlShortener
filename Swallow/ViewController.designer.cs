@@ -9,7 +9,7 @@ using System.CodeDom.Compiler;
 
 namespace Swallow
 {
-	[Register ("ViewController")]
+	[Register("ViewController")]
 	partial class ViewController
 	{
 		[Outlet]
@@ -29,13 +29,15 @@ namespace Swallow
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (googleApiKey != null) {
-				googleApiKey.Dispose ();
+			if (googleApiKey != null)
+			{
+				googleApiKey.Dispose();
 				googleApiKey = null;
 			}
 
-			if (pasteboardMonitoring != null) {
-				pasteboardMonitoring.Dispose ();
+			if (pasteboardMonitoring != null)
+			{
+				pasteboardMonitoring.Dispose();
 				pasteboardMonitoring = null;
 			}
 

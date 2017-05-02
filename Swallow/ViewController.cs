@@ -13,7 +13,7 @@ namespace Swallow
 		PasteboardStringMonitor monitor;
 		bool webApiProcessing = false;
 
-    	public ViewController(IntPtr handle) : base(handle)
+    public ViewController(IntPtr handle) : base(handle)
 		{
 		}
 
