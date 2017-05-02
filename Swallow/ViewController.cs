@@ -21,6 +21,7 @@ namespace Swallow
 		{
 			base.ViewDidLoad();
 			this.monitor = new PasteboardStringMonitor(NSPasteboard.GeneralPasteboard, this.onPasteboardStringChanged);
+			this.googleApiKey.StringValue = SecKeyChainUtil.GetGoogleApiKey();
 		}
 
 		public override NSObject RepresentedObject
