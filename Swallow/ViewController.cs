@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using AppKit;
 using Foundation;
+using Security;
 using Swallow.Model;
 
 namespace Swallow
@@ -11,7 +13,7 @@ namespace Swallow
 		PasteboardStringMonitor monitor;
 		bool webApiProcessing = false;
 
-    public ViewController(IntPtr handle) : base(handle)
+    	public ViewController(IntPtr handle) : base(handle)
 		{
 		}
 
@@ -43,6 +45,15 @@ namespace Swallow
 			else
 			{
 				this.monitor.Pause();
+			}
+		}
+
+		partial void OnApiKeySaverClicked(NSObject sender)
+		{
+			var res = SecKeyChainUtil.RegisterGoogleApiKey(this.googleApiKey.StringValue);
+			if (res.IsError)
+			{
+				notifyToUser("保存に失敗", res.ErrorMessage);
 			}
 		}
 

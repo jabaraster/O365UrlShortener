@@ -9,30 +9,39 @@ using System.CodeDom.Compiler;
 
 namespace Swallow
 {
-	[Register("ViewController")]
+	[Register ("ViewController")]
 	partial class ViewController
 	{
+		[Outlet]
+		AppKit.NSButton apiKeySaver { get; set; }
+
 		[Outlet]
 		AppKit.NSSecureTextField googleApiKey { get; set; }
 
 		[Outlet]
 		AppKit.NSButton pasteboardMonitoring { get; set; }
 
-		[Action("OnMonitoringCheckChanged:")]
-		partial void OnMonitoringCheckChanged(Foundation.NSObject sender);
+		[Action ("OnApiKeySaverClicked:")]
+		partial void OnApiKeySaverClicked (Foundation.NSObject sender);
 
-		void ReleaseDesignerOutlets()
+		[Action ("OnMonitoringCheckChanged:")]
+		partial void OnMonitoringCheckChanged (Foundation.NSObject sender);
+		
+		void ReleaseDesignerOutlets ()
 		{
-			if (googleApiKey != null)
-			{
-				googleApiKey.Dispose();
+			if (googleApiKey != null) {
+				googleApiKey.Dispose ();
 				googleApiKey = null;
 			}
 
-			if (pasteboardMonitoring != null)
-			{
-				pasteboardMonitoring.Dispose();
+			if (pasteboardMonitoring != null) {
+				pasteboardMonitoring.Dispose ();
 				pasteboardMonitoring = null;
+			}
+
+			if (apiKeySaver != null) {
+				apiKeySaver.Dispose ();
+				apiKeySaver = null;
 			}
 		}
 	}
